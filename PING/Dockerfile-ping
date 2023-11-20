@@ -9,3 +9,4 @@ COPY . .
 EXPOSE 4567
 
 CMD ["node", "server-ping.js"]
+

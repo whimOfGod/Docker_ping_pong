@@ -10,13 +10,13 @@ const REGISTRY_URL = 'http://server-registry:8080/register';
 
 app.get('/', async (req, res) => {
   try {
-    // Enregistrez l'adresse du serveur-ping auprès du serveur d'annuaire
+    // Enregistrer l'adresse du serveur-ping auprès du serveur d'annuaire
     await axios.post(REGISTRY_URL, { serverName: 'server-ping', serverAddress: `http://server-ping:${PORT}` });
     
-    // Obtenez l'adresse du serveur-pong depuis le serveur d'annuaire
+    // Obtenir l'adresse du serveur-pong depuis le serveur d'annuaire
     const pongServerAddress = await axios.get('http://server-registry:8080/get-address/server-pong');
     
-    // Envoie une requête "pong" au serveur-pong
+    // Envoyer une requête "pong" au serveur-pong
     await axios.get(pongServerAddress.data);
     
     res.send('Ping successful!');
