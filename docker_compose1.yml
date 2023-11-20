@@ -1,0 +1,19 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  server-ping:
+    build:
+      context: ./PING
+      dockerfile: Dockerfile-ping
+    container_name: server-ping
+    ports:
+      - "4567:4567"
+
+  server-pong:
+    build:
+      context: ./PONG
+      dockerfile: Dockerfile-pong
+    container_name: server-pong
+    ports:
+      - "5372:5372"
