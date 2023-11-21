@@ -23,6 +23,17 @@ services:
     depends_on:
       - server-registry
       - message-broker
+      - gateway
+
+  gateway:
+    build:
+      context: ./GATEWAY
+      dockerfile: Dockerfile-gateway
+    container_name: gateway
+    ports:
+      - "8081:8081"
+    depends_on:
+      - message-broker
 
   message-broker:
     image: "rabbitmq:management"
