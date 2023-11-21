@@ -12,6 +12,7 @@ services:
     depends_on:
       - server-registry
       - message-broker
+      - gateway
 
   server-pong:
     build:
@@ -44,7 +45,7 @@ services:
 
   server-registry:
     build:
-      context: .
+      context: ./REGISTRY
       dockerfile: Dockerfile-registry
     container_name: server-registry
     ports:
