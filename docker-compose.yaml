@@ -30,12 +30,10 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
-    depends_on:
-      - server-registry
 
   server-registry:
     build:
-      context: ./Dockerfile-registry
+      context: .
       dockerfile: Dockerfile-registry
     container_name: server-registry
     ports:
