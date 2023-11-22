@@ -45,7 +45,7 @@ services:
 
   server-registry:
     build:
-      context: ./REGISTRY
+      context: ./Dockerfile-registry
       dockerfile: Dockerfile-registry
     container_name: server-registry
     ports:
