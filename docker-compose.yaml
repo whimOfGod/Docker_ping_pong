@@ -12,8 +12,8 @@ services:
       - server-registry
       - message-broker
       - gateway
- #   networks:
- #     - isolated_network
+    networks:
+      - isolated_network
 
   server-pong:
     build:
@@ -26,8 +26,8 @@ services:
       - server-registry
       - message-broker
       - gateway
-#    networks:
-#      - isolated_network
+    networks:
+      - isolated_network
 
   gateway:
     build:
@@ -38,8 +38,8 @@ services:
       - "8081:8081"
     depends_on:
       - message-broker
-#    networks:
-#      - isolated_network
+    networks:
+      - isolated_network
 
   message-broker:
     image: "rabbitmq:management"
@@ -56,6 +56,6 @@ services:
     ports:
       - "8080:8080"
 
-#networks:
-#  isolated_network:
-#    driver: bridge
+networks:
+  isolated_network:
+    driver: bridge
