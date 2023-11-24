@@ -1,3 +1,6 @@
+[   IMPORTANT : récupérer la dernière version du commit depuis la bracnch dev_ops1*  ]
+
+
 Daytwo
 ## Exercice 2 : Mise à l'échelle
 
@@ -12,6 +15,16 @@ Voici la commande pour la lancer :
 
 ]
 
+si un problème de chemin survient lors du lancement du docker-compose , corriger cette partie dans le docker_compose
+
+...
+      server-registry:
+        build:
+          context: ./REGISTRY   ------------->    // changer ./REGISTRY  en ./Dockerfile-registry
+          dockerfile: Dockerfile-registry
+        container_name: server-registry
+        ports:
+...
 
 ## Exercice 3 : Gateway
 
